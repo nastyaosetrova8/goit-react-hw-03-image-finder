@@ -8,7 +8,7 @@ const ImageGallery = ({images, onOpenModal}) => {
 
   return (
     <ImageGalleryStyled>
-      {images?.length > 0 && images.map(({id, webformatURL, largeImageURL, tags}) => {
+      {images.map(({id, webformatURL, largeImageURL, tags}) => {
         return (
             <ImageGalleryItem
             key={id}

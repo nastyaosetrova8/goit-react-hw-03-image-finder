@@ -24,11 +24,11 @@ export class App extends Component {
       prevState.searchQuery !== this.state.searchQuery ||
       this.state.page !== prevState.page
     ) {
-      this.fetchGallery(this.state.searchQuery);
+      this.fetchGallery();
     }
   }
 
-  fetchGallery = async numberPage => {
+  fetchGallery = async () => {
     const { searchQuery, page } = this.state;
     try {
       this.setState({ isLoading: true });
@@ -83,7 +83,8 @@ export class App extends Component {
           </div>
         )}
 
-        {this.state.gallery && <ImageGallery
+
+        {this.state.gallery.length > 0 && <ImageGallery
       onOpenModal={this.onOpenModal}
       images={this.state.gallery}
       />}
